@@ -17,5 +17,5 @@ func main() {
 
 	r.Mount("/v1/url", urlResource{}.Routes())
 
-	http.ListenAndServe(":3000", r)
+	http.ListenAndServe(":8080", r)
 }
