@@ -37,8 +37,7 @@ func (rs urlResource) Routes() chi.Router {
 }
 
 func (rs urlResource) Create(w http.ResponseWriter, r *http.Request) {
-	tinyUrl := generateRandomString(6)
+	tinyUrl := r.Host + "/" + generateRandomString(6)
 
 	render.JSON(w, r, &hashResult{TinyUrl: tinyUrl})
-
 }
